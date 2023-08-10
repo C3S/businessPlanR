@@ -9,7 +9,7 @@
 #' Package: \tab businessPlanR\cr
 #' Type: \tab Package\cr
 #' Version: \tab 0.1-0\cr
-#' Date: \tab 2023-08-09\cr
+#' Date: \tab 2023-08-10\cr
 #' Depends: \tab R (>= 4.0.0)\cr
 #' Encoding: \tab UTF-8\cr
 #' License: \tab GPL (>= 3)\cr
