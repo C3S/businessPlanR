@@ -39,7 +39,7 @@
 #'    for type headlines.
 #' @param space Character, a space definition to put between currency and value.
 #' @param ... Additional arguments passed on to \code{\link[kableExtra:kbl]{kbl}}.
-#' @return A n object of class \code{kable}.
+#' @return An object of class \code{kable}.
 #' @docType methods
 #' @rdname kbl_by_types-methods
 #' @export

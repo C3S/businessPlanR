@@ -37,6 +37,7 @@
 #' @param merge Another list of values to be merged with the results, can be used for nested calls of this function to
 #'    generate more complex patterns.
 #' @param digits Number of digits used for rounding when \code{month} is more than one entry.
+#' @return A list of monthly transactions named in "YYYY.MM" scheme (\code{regularly_delayed}).
 #' @rdname regularly
 #' @export
 #' @examples

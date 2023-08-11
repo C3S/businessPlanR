@@ -184,8 +184,13 @@ as_transaction(obj, to, aspect, valid_types = "default", type)
 )
 }
 \arguments{
-\item{obj}{An object of class \code{\link[businessPlanR:operations-class]{operations}},
-\code{\link[businessPlanR:revenue-class]{revenue}} or \code{\link[businessPlanR:expense-class]{expense}}.}
+\item{obj}{An object of class
+\code{\link[businessPlanR:operations-class]{operations}},
+\code{\link[businessPlanR:revenue-class]{revenue}},
+\code{\link[businessPlanR:expense-class]{expense}},
+\code{\link[businessPlanR:transaction_plan-class]{transaction_plan}},
+\code{\link[businessPlanR:loan-class]{loan}} or
+\code{\link[businessPlanR:depreciation-class]{depreciation}}.}
 
 \item{drop_nonyear_cols}{Logical, whether to drop or keep columns specifying type,
       category or name or rows.}
@@ -229,6 +234,16 @@ All additional data are silently dropped.}
 Depending on the method, either a data frame or a numeric value.
 }
 \description{
+These methods return the requested slots from objects of class
+\code{\link[businessPlanR:operations-class]{operations}},
+\code{\link[businessPlanR:revenue-class]{revenue}},
+\code{\link[businessPlanR:expense-class]{expense}},
+\code{\link[businessPlanR:transaction_plan-class]{transaction_plan}},
+\code{\link[businessPlanR:loan-class]{loan}} or
+\code{\link[businessPlanR:depreciation-class]{depreciation}},
+or, in case of their \code{<-} counterparts, replace slots with a given \code{value}.
+}
+\details{
 If \code{as_transaction(..., aspect="balance_start")} is being called on a loan object,
       only the initial
 value (and perhaps growth instead of declining values) is used,

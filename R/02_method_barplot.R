@@ -1,4 +1,4 @@
-# Copyright 2021 Meik Michalke <meik.michalke@c3s.cc>
+# Copyright 2021-2023 Meik Michalke <meik.michalke@c3s.cc>
 #
 # This file is part of the R package businessPlanR.
 #
@@ -23,6 +23,7 @@
 #' @param types Character string naming the model types defined by
 #'    \code{\link[businessPlanR:set_types]{set_types}} to be used.
 #' @param ... Any other argument suitable for \code{barplot()}.
+#' @return See \code{\link[graphics:barplot]{barplot}}.
 #' @export
 #' @docType methods
 #' @rdname barplot-methods
@@ -33,7 +34,7 @@ setGeneric("barplot", function(height, ...) standardGeneric("barplot"))
 #' @rdname barplot-methods
 #' @aliases barplot,revenue-method
 #' @include 01_class_03_revenue.R
-#' @import graphics
+#' @importFrom graphics barplot legend
 setMethod("barplot", signature(height="revenue"), function(height, resolution="month", types="default", ...){
     return(invisible(
         barplot_rev_exp(
@@ -52,7 +53,7 @@ setMethod("barplot", signature(height="revenue"), function(height, resolution="m
 #' @rdname barplot-methods
 #' @aliases barplot,expense-method
 #' @include 01_class_04_expense.R
-#' @import graphics
+#' @importFrom graphics barplot legend
 setMethod("barplot", signature(height="expense"), function(height, resolution="month", types="default", ...){
     return(invisible(
         barplot_rev_exp(
@@ -71,7 +72,7 @@ setMethod("barplot", signature(height="expense"), function(height, resolution="m
 #' @rdname barplot-methods
 #' @aliases barplot,operations-method
 #' @include 01_class_01_operations.R
-#' @import graphics
+#' @importFrom graphics barplot legend
 setMethod("barplot", signature(height="operations"), function(height, resolution="month", scope="profit", types="default", ...){
     cnd_data <- condensed_data(
         obj=height,

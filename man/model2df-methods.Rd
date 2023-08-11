@@ -17,6 +17,10 @@ model2df(model = get_model(), factorize = TRUE)
 \item{factorize}{Logical,
       whether columns not representing a transaction type should be returned as a factor.}
 }
+\value{
+A data frame,
+      representing the model structure that was defined with \code{\link[businessPlanR:table_model]{table_model}}.
+}
 \description{
 Converting a model from list format into a data frame makes it easier to work with nested sub-positions,
 and to check the model for completeness.

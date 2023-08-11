@@ -29,6 +29,7 @@
 #' @param space Named character vector, a space definition to put between prefix/suffix and value.
 #'    Defaults to a thin space for both, LaTeX and HTML.
 #'    If you use provide one character, that one is used regardless of the output environment.
+#' @return A formatted character string.
 #' @rdname nice_numbers
 #' @importFrom knitr is_latex_output
 #' @export

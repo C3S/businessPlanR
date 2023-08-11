@@ -41,6 +41,9 @@ generate more complex patterns.}
 
 \item{digits}{Number of digits used for rounding when \code{month} is more than one entry.}
 }
+\value{
+A list of monthly transactions named in "YYYY.MM" scheme (\code{regularly_delayed}).
+}
 \description{
 For all years defined, generates a list of values as defined by \code{pa}
 and due at the given month. The result can be used as input for the

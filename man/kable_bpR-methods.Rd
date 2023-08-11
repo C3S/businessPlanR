@@ -168,7 +168,7 @@ in the final set of rows showing a summary over all items.}
       for both LaTeX and HTML format.}
 }
 \value{
-A n object of class \code{kable}.
+An object of class \code{kable}.
 }
 \description{
 This method uses the \code{kableExtra} package for table formatting.

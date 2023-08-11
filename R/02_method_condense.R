@@ -1,4 +1,4 @@
-# Copyright 2021 Meik Michalke <meik.michalke@c3s.cc>
+# Copyright 2021-2023 Meik Michalke <meik.michalke@c3s.cc>
 #
 # This file is part of the R package businessPlanR.
 #
@@ -17,6 +17,12 @@
 
 #' Condense operations objects into neat data frame
 #' 
+#' Uses the provided \code{model} to create a data frame from the
+#' \code{\link[businessPlanR:operations-class]{operations}} object.
+#' Depending on the type of data frame requestet (i.e., default or cashflow)
+#' and the temporal resolution (month, quarter or year), various subsets of
+#' the overall data in \code{obj} are returned.
+#' 
 #' @param obj An object of class \code{\link[businessPlanR:operations-class]{operations}}.
 #' @param model A named list of named lists describing the stepwise accounting rules
 #'    for all data in in \code{obj}.
@@ -33,7 +39,7 @@
 #' @param years Character (or numeric) vector defining the year(s) to be represented in the output. This is intended to be
 #'    useful for splitting up quarterly or monthly output.
 #' @param digits Number of digits used for rounding values, disabled if set to \code{NA}.
-#' @return A data frame.
+#' @return A data frame with a subset of the financial transactions of \code{obj}.
 #' @docType methods
 #' @rdname condense-methods
 #' @aliases condense-methods

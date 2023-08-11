@@ -17,12 +17,26 @@
 
 #' Getter/setter methods for businessPlanR objects
 #' 
+#' These methods return the requested slots from objects of class
+#' \code{\link[businessPlanR:operations-class]{operations}},
+#' \code{\link[businessPlanR:revenue-class]{revenue}},
+#' \code{\link[businessPlanR:expense-class]{expense}},
+#' \code{\link[businessPlanR:transaction_plan-class]{transaction_plan}},
+#' \code{\link[businessPlanR:loan-class]{loan}} or
+#' \code{\link[businessPlanR:depreciation-class]{depreciation}},
+#' or, in case of their \code{<-} counterparts, replace slots with a given \code{value}.
+#'
 #' If \code{as_transaction(..., aspect="balance_start")} is being called on a loan object, only the initial
 #' value (and perhaps growth instead of declining values) is used, e.g. as revenue for calculations.
 #' 
 #' @docType methods
-#' @param obj An object of class \code{\link[businessPlanR:operations-class]{operations}},
-#'    \code{\link[businessPlanR:revenue-class]{revenue}} or \code{\link[businessPlanR:expense-class]{expense}}.
+#' @param obj An object of class
+#' \code{\link[businessPlanR:operations-class]{operations}},
+#' \code{\link[businessPlanR:revenue-class]{revenue}},
+#' \code{\link[businessPlanR:expense-class]{expense}},
+#' \code{\link[businessPlanR:transaction_plan-class]{transaction_plan}},
+#' \code{\link[businessPlanR:loan-class]{loan}} or
+#' \code{\link[businessPlanR:depreciation-class]{depreciation}}.
 #' @param drop_nonyear_cols Logical, whether to drop or keep columns specifying type, category or name or rows.
 #' @param resolution One of \code{"month"}, \code{"quarter"}, or \code{"year"}.
 #' @param only_type Optional character vector, if given, only rows with matching type are returned.

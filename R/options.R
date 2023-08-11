@@ -1,4 +1,4 @@
-# Copyright 2021-2022 Meik Michalke <meik.michalke@c3s.cc>
+# Copyright 2021-2023 Meik Michalke <meik.michalke@c3s.cc>
 #
 # This file is part of the R package businessPlanR.
 #
@@ -27,6 +27,10 @@
 #' @param class One of \code{"revenue"} or \code{"expense"}.
 #' @param name Character string, giving the set of types a name. You can use this to have multiple
 #'    sets of types simultaneously in the same session.
+#' @return \code{set_types} is a wrapper for \code{\link[base:options]{options}} and adds/replaces a list
+#'    called \code{name} to the \code{businessPlanR} option of the running session.
+#'    \code{get_types} returns the list from the \code{businessPlanR} option.
+#'    \code{get_model} just returns the internal definition of default operations model as a list.
 #' @rdname options
 #' @export
 set_types <- function(

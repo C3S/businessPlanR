@@ -33,6 +33,9 @@ nice_numbers(
 Defaults to a thin space for both, LaTeX and HTML.
 If you use provide one character, that one is used regardless of the output environment.}
 }
+\value{
+A formatted character string.
+}
 \description{
 Uses \code{\link[base:format]{format}} with some customized defaults.
 It's being called by \code{\link[businessPlanR:kable_bpR]{kable_bpR}}.

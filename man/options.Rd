@@ -29,6 +29,12 @@ sets of types simultaneously in the same session.}
 \item{names_only}{Logical,
       whether the full list or only the names of defined types should be returned.}
 }
+\value{
+\code{set_types} is a wrapper for \code{\link[base:options]{options}} and adds/replaces a list
+   called \code{name} to the \code{businessPlanR} option of the running session.
+   \code{get_types} returns the list from the \code{businessPlanR} option.
+   \code{get_model} just returns the internal definition of default operations model as a list.
+}
 \description{
 These functions change the globally available options of the running R session.
 Its values define types of transactions you want to be able to use in your

@@ -81,7 +81,7 @@ for type headlines.}
 \item{...}{Additional arguments passed on to \code{\link[kableExtra:kbl]{kbl}}.}
 }
 \value{
-A n object of class \code{kable}.
+An object of class \code{kable}.
 }
 \description{
 This method uses the \code{kableExtra} package for table formatting.

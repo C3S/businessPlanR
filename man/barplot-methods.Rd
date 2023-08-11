@@ -31,6 +31,9 @@ barplot(height, ...)
 \item{scope}{One of \code{"revenue"}, \code{"expense"}, \code{"rev_exp"},
       \code{"profit"}.}
 }
+\value{
+See \code{\link[graphics:barplot]{barplot}}.
+}
 \description{
 Plot business plan transactions
 }

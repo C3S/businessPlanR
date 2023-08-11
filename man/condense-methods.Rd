@@ -63,8 +63,12 @@ useful for splitting up quarterly or monthly output.}
 \item{digits}{Number of digits used for rounding values, disabled if set to \code{NA}.}
 }
 \value{
-A data frame.
+A data frame with a subset of the financial transactions of \code{obj}.
 }
 \description{
-Condense operations objects into neat data frame
+Uses the provided \code{model} to create a data frame from the
+\code{\link[businessPlanR:operations-class]{operations}} object.
+Depending on the type of data frame requestet (i.e., default or cashflow)
+and the temporal resolution (month, quarter or year), various subsets of
+the overall data in \code{obj} are returned.
 }

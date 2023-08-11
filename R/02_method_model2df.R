@@ -1,4 +1,4 @@
-# Copyright 2021-2022 Meik Michalke <meik.michalke@c3s.cc>
+# Copyright 2021-2023 Meik Michalke <meik.michalke@c3s.cc>
 #
 # This file is part of the R package businessPlanR.
 #
@@ -31,6 +31,7 @@
 #' 
 #' @param model A named list describing a transaction model.
 #' @param factorize Logical, whether columns not representing a transaction type should be returned as a factor.
+#' @return A data frame, representing the model structure that was defined with \code{\link[businessPlanR:table_model]{table_model}}.
 #' @docType methods
 #' @rdname model2df-methods
 #' @export
