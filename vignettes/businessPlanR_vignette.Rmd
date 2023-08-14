@@ -24,7 +24,7 @@ vignette: >
 library(businessPlanR)
 ```
 ```{r, set-options, echo=FALSE, cache=FALSE}
-options(width=85)
+old_options <- options(width=85)
 ```
 
 # Introduction
@@ -767,3 +767,7 @@ It can be very revealing to use such a Shiny app to examine the overall impact o
 We added a permalink to the Shiny app we used to discuss our business model as a team, which included all the configurable parameters. Such a Shiny permalink can be turned into a named list using `businessPlanR`'s `permalink2list()` function, which in turn makes it very easy to copy a custom configuration from Shiny into an RMarkdown document, so that all calculations and tables can be replicated.
 
 The relevant functions of the `businessPlanR` package have been designed to produce output that should be usable in HTML and LaTeX contexts, without the need to adapt the calls.
+
+```{r, restore-options, echo=FALSE, cache=FALSE}
+options(old_options)
+```

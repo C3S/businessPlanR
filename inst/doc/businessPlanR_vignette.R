@@ -2,7 +2,7 @@
 library(businessPlanR)
 
 ## ---- set-options, echo=FALSE, cache=FALSE-----------------------------------------
-options(width=85)
+old_options <- options(width=85)
 
 ## ----------------------------------------------------------------------------------
 set_types(
@@ -530,4 +530,7 @@ kable_bpR(
     model=saftladen_inc_stamt,
     resolution="year"
 )
+
+## ---- restore-options, echo=FALSE, cache=FALSE-------------------------------------
+options(old_options)
 
