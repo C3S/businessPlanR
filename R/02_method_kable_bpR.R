@@ -1,4 +1,4 @@
-# Copyright 2021-2023 Meik Michalke <meik.michalke@c3s.cc>
+# Copyright 2021-2024 Meik Michalke <meik.michalke@c3s.cc>
 #
 # This file is part of the R package businessPlanR.
 #
@@ -165,13 +165,23 @@ setMethod("kable_bpR",
                         kable_body <- column_spec(kable_body, column=this_col, width=detail_width[[this_col]])
                     }
                 } else {}
-                kable_body <- collapse_rows(
-                    kable_body,
-                    columns=1:3,
-                    valign="top",
-                    latex_hline="none",
-                    longtable_clean_cut=longtable_clean_cut
-                )
+                if(knitr::is_latex_output()){
+                    kable_body <- collapse_rows(
+                        kable_body,
+                        columns=1:3,
+                        row_group_label_position="first",
+                        latex_hline="none",
+                        longtable_clean_cut=longtable_clean_cut
+                    )
+                } else {
+                    kable_body <- collapse_rows(
+                        kable_body,
+                        columns=1:3,
+                        valign="top",
+                        latex_hline="none",
+                        longtable_clean_cut=longtable_clean_cut
+                    )
+                }
                 pos_vector <- sapply(unique(cond_obj[["Position"]]), function(this_pos){sum(cond_obj[["Position"]] %in% this_pos)})
                 kable_body <- pack_rows(kable_body, index=pos_vector, color=detail_colors[["color"]], background=detail_colors[["background"]])
                 # moved kable_styling() after collapse_rows() because of buggy LaTeX output with
@@ -272,13 +282,23 @@ setMethod("kable_bpR",
                     )
                     kable_body <- column_spec(kable_body, column=1, bold=TRUE)
                     if(sum(sub_pos_cols) > 0){
-                        kable_body <- collapse_rows(
-                            kable_body,
-                            columns=c(1, which(sub_pos_cols)),
-                            valign="top",
-                            latex_hline="none",
-                            longtable_clean_cut=longtable_clean_cut
-                        )
+                        if(knitr::is_latex_output()){
+                            kable_body <- collapse_rows(
+                                kable_body,
+                                columns=c(1, which(sub_pos_cols)),
+                                row_group_label_position="first",
+                                latex_hline="none",
+                                longtable_clean_cut=longtable_clean_cut
+                            )
+                        } else {
+                            kable_body <- collapse_rows(
+                                kable_body,
+                                columns=c(1, which(sub_pos_cols)),
+                                valign="top",
+                                latex_hline="none",
+                                longtable_clean_cut=longtable_clean_cut
+                            )
+                        }
                     } else {}
                 } else {}
             }
@@ -486,14 +506,25 @@ setMethod("kable_bpR",
             kable_body <- column_spec(kable_body, column=nondate_cols - 1, bold=TRUE)
             kable_body <- column_spec(kable_body, column=nondate_cols, italic=TRUE)
 
-            kable_body <- collapse_rows(
-                kable_body,
-                columns=1:nondate_cols,
-                valign="top",
-                latex_hline="custom",
-                custom_latex_hline=which(colnames(obj_df) %in% "name"),
-                longtable_clean_cut=longtable_clean_cut
-            )
+            if(knitr::is_latex_output()){
+                kable_body <- collapse_rows(
+                    kable_body,
+                    columns=1:nondate_cols,
+                    row_group_label_position="first",
+                    latex_hline="custom",
+                    custom_latex_hline=which(colnames(obj_df) %in% "name"),
+                    longtable_clean_cut=longtable_clean_cut
+                )
+            } else {
+                kable_body <- collapse_rows(
+                    kable_body,
+                    columns=1:nondate_cols,
+                    valign="top",
+                    latex_hline="custom",
+                    custom_latex_hline=which(colnames(obj_df) %in% "name"),
+                    longtable_clean_cut=longtable_clean_cut
+                )
+            }
 
             kable_body <- kable_styling(
                 kable_body,

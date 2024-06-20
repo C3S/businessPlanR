@@ -16,7 +16,7 @@ devtools::install_github("C3S/businessPlanR")
 
 ## License
 
-`businessPlanR` Copyright (C) 2023 Meik Michalke <meik.michalke@hhu.de>
+`businessPlanR` Copyright (C) 2023-2024 Meik Michalke <meik.michalke@hhu.de>
 
 `businessPlanR` is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
