@@ -50,19 +50,12 @@ pdf_businessplan <- function(
   , makeindex = FALSE
   , makeglossary = FALSE
   , pdflatex_runs = "auto"
-  , keep_tex = TRUE
   , ...
 ){
-  output <- base_format(...)
+  output_base <- base_format(...)
 
-  intermediates_generator_orig <- output[["intermediates_generator"]]
-
-  output[["intermediates_generator"]] <- function(
-      link_dirs = link_dirs
-    , copy_files = copy_files
-    , ...
-  ){
-    im <- intermediates_generator_orig(...)
+  intermediates_generator <- function(..., link_dirs = link_dirs, copy_files = copy_files){
+    im <- c()
     if(length(link_dirs) > 0){
       im <- c(im, link_dirs)
     } else {}
@@ -71,6 +64,25 @@ pdf_businessplan <- function(
     } else {}
     return(im)
   }
+
+  output <- output_format(
+      knitr = output_base[["knitr"]]
+    , pandoc = output_base[["pandoc"]]
+    , keep_md = output_base[["keep_md"]]
+    , clean_supporting = output_base[["clean_supporting"]]
+    , df_print = output_base[["df_print"]]
+    , pre_knit = output_base[["pre_knit"]]
+    , post_knit = output_base[["post_knit"]]
+    , pre_processor = output_base[["pre_processor"]]
+    , intermediates_generator = intermediates_generator
+    , post_processor = output_base[["post_processor"]]
+    , on_exit = output_base[["on_exit"]]
+    , file_scope = output_base[["file_scope"]]
+  )
+
+  # fix duplicates
+  output[["pandoc"]][["lua_filters"]] <- unique(output[["pandoc"]][["lua_filters"]])
+  output[["pandoc"]][["args"]] <- unique(output[["pandoc"]][["args"]])
 
   if(any(isTRUE(makeindex), isTRUE(makeglossary), !identical(pdflatex_runs, "auto"))){
     output[["pandoc"]][["keep_tex"]] <- TRUE
