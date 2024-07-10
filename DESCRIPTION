@@ -22,7 +22,7 @@ LazyLoad: yes
 Authors@R: c(person(given="Meik", family="Michalke",
         email="meik.michalke@c3s.cc", role=c("aut", "cre")))
 Version: 0.1-0
-Date: 2024-07-01
+Date: 2024-07-10
 RoxygenNote: 7.3.1
 Collate: 
     '00_environment.R'
@@ -50,7 +50,6 @@ Collate:
     'model_node.R'
     'nice_numbers.R'
     'options.R'
-    'pdf_businessplan.R'
     'permalink2list.R'
     'regularly.R'
     'regularly_delayed.R'
